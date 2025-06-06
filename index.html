@@ -29,6 +29,9 @@
     <!-- SweetAlert2 11.0.0 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer ></script>
 
+    <!-- Font Awesome Icons CDN  Sets de icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
 </head>
@@ -87,7 +90,7 @@
 
 
                                 <!-- Contact Form -->
-                                <form class="slides-form align-left" action="" method="POST" autocomplete="off">
+                                <form class="slides-form align-left" action="" method="POST" autocomplete="off" target="hidden_iframe" onsubmit="formSubmitted()" >  <!-- Agregamos el Evento y el Target -->
 
                                     <!-- Nombre Completo -->
                                     <div class="margin-bottom-1 label">
@@ -130,15 +133,16 @@
                                         <label class="crop opacity-5 inlineBlock weight-4" for="terms">Acepto los <a href="#" class="underline">Términos y Condiciones</a> del servicio</label>
                                     </div>
 
-
                                     <!-- Botón Enviar -->
-                                    <button type="submit" class="crop margin-top-3 button rounded gray wide">Reservar Servicio</button>
-
+                                    <button type="submit" id="button_submit_form" onclick="formSubmitted()" class="crop margin-top-3 button rounded gray wide">Reservar Servicio</button>
 
 
                                 </form>
 
 
+                                <!-- Bloqueo la rediccion del metodo Post::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+                                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                                 <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
 
